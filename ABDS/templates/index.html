@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <div>
+            <br />
+        </div>
+        <table>
+            <tr>
+                <th> Departure </th>
+                <th> Destination </th>
+                <th> Queues </th>
+                <th> Number of busses to deploy </th>
+            </tr>
+
+            {% for key, value in deploying.items() %}
+            <tr>
+                {% for local in key.split("-") %}
+                <td>{{local.capitalize()}}</td>
+                {% endfor %}
+                <td>{{sellingTicket[key]}}</td>
+                <td>{{value}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <span id="capleft"><a href="{{url_for('random')}}"> Generate </a></span>
+            <p id="capright"> Bus Capacity: <span>{{busCapacity}}</span></p>
+        </div>
+
+    </div>
+
+{% endblock %}
