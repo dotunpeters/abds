@@ -12,8 +12,7 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import render_template, redirect, request
-from ABDS import app
-from ABDS import assignRoute
+import assignRoute
 
 
 @app.route('/')
